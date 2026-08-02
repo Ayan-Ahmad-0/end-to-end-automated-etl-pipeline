@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Real-Time Transportation Demand Forecasting Pipeline
 
 An end-to-end data engineering project — real-time ingestion, weather enrichment, ML forecasting, and live Power BI dashboard.
