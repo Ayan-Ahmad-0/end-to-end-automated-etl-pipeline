@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Real-Time Transportation Demand Forecasting Pipeline
 
 An end-to-end data engineering project — real-time ingestion, weather enrichment, ML forecasting, and live Power BI dashboard.
@@ -106,3 +107,7 @@ Karachi · Lahore · Islamabad · Sialkot
 ## Author
 
 Ayan Ahmad · ayanahmedc360@gmail.com
+=======
+# end-to-end-automated-etl-pipeline
+This project demonstrates a real-time data pipeline for forecasting taxi demand. The pipeline ingests streaming taxi ride events, processes them, and stores results in PostgreSQL for further analysis and dashboarding in Power BI.
+>>>>>>> c87e9f1a8987c16fee6699ea47b8bbc027cd2b76
