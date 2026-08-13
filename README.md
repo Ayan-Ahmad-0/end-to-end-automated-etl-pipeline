@@ -19,6 +19,24 @@ An end-to-end data engineering project — real-time ingestion, weather enrichme
 
 This project simulates a production-grade transportation analytics platform. It continuously ingests real-time trip data, enriches it with live weather via the OpenWeatherMap API, runs machine learning models to classify busy zones and forecast future demand, and visualizes everything in a 4-page interactive Power BI dashboard — all orchestrated automatically with Apache Airflow running inside Docker.
 
+## 🏗️ Architecture
+
+**Real-Time Trip Generator** → **Kafka** → **Airflow-Orchestrated Processing (Spark)** → **Weather Enrichment (OpenWeatherMap API)** → **ML Layer (Logistic Regression + Prophet)** → **PostgreSQL** → **Power BI (live connection)**
+
+| Layer                  | Purpose                                                        | Technology                              |
+| ------------------------ | ----------------------------------------------------------------- | ------------------------------------------ |
+| **Ingestion**           | Simulates real-time trip events (pickup/dropoff, timestamp, zone)  | `data_generator.py`, Apache Kafka           |
+| **Orchestration**       | Schedules, retries, and logs every stage of the pipeline            | Apache Airflow (Dockerized), DAG `Taxi_data_pipeline` |
+| **Processing**          | Distributed transformation of streamed trip data                   | Apache Spark, Databricks                    |
+| **Enrichment**          | Joins trip data with live weather conditions per city                | OpenWeatherMap API, `weather_enrichment.py` |
+| **ML — Classification** | Flags top 30% busiest pickup zones                                   | Scikit-learn Logistic Regression, `busy_location.py` |
+| **ML — Forecasting**    | Predicts next-hour demand in 15-minute intervals                     | Facebook Prophet, `ml_demand_forecast.py`   |
+| **Storage**             | Central warehouse for processed, enriched, and predicted data        | PostgreSQL                                  |
+| **Visualization**       | 4-page live dashboard (trip stats, busy zones, forecasts, weather)   | Power BI (live connection)                  |
+
+### Architecture Diagram
+![DAG Graph](assets/DAG_Graph.png)
+
 ## Pipeline Architecture
 
 Every stage is orchestrated by Apache Airflow as a DAG (`Taxi_data_pipeline`) that runs on a scheduled interval, retries on failure, and logs every run.
