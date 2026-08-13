@@ -104,10 +104,4 @@ Airflow UI will be available at `http://localhost:8085`. Enable the `Taxi_data_p
 
 Karachi · Lahore · Islamabad · Sialkot
 
-## Author
 
-Ayan Ahmad · ayanahmedc360@gmail.com
-=======
-# end-to-end-automated-etl-pipeline
-This project demonstrates a real-time data pipeline for forecasting taxi demand. The pipeline ingests streaming taxi ride events, processes them, and stores results in PostgreSQL for further analysis and dashboarding in Power BI.
->>>>>>> c87e9f1a8987c16fee6699ea47b8bbc027cd2b76
