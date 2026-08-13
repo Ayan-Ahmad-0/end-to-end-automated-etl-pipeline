@@ -35,7 +35,7 @@ This project simulates a production-grade transportation analytics platform. It 
 | **Visualization**       | 4-page live dashboard (trip stats, busy zones, forecasts, weather)   | Power BI (live connection)                  |
 
 ### Architecture Diagram
-![DAG Graph](assets/DAG_Graph.png)
+![architecture](assets/architecture-4.png)
 
 ## Pipeline Architecture
 
