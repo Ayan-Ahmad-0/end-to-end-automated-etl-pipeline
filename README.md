@@ -19,7 +19,7 @@ An end-to-end data engineering project — real-time ingestion, weather enrichme
 
 This project simulates a production-grade transportation analytics platform. It continuously ingests real-time trip data, enriches it with live weather via the OpenWeatherMap API, runs machine learning models to classify busy zones and forecast future demand, and visualizes everything in a 4-page interactive Power BI dashboard — all orchestrated automatically with Apache Airflow running inside Docker.
 
-## 🏗️ Architecture
+## Architecture
 
 **Real-Time Trip Generator** → **Kafka** → **Airflow-Orchestrated Processing (Spark)** → **Weather Enrichment (OpenWeatherMap API)** → **ML Layer (Logistic Regression + Prophet)** → **PostgreSQL** → **Power BI (live connection)**
 
